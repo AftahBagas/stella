@@ -14,9 +14,10 @@
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables",
-      "value": "ANYTHING"
+      "value": "ANYTHING",
+      "required": false
     },
-    "TOKEN": {
+    "API_KEY": {
       "description": "Your bot token, as a string.",
       "value": ""
     },
@@ -45,15 +46,23 @@
     },
     "SUDO_USERS": {
       "description": "A space separated list of user_ids which should be considered sudo users",
-      "value": "1263617196"
+      "value": "1263617196",
+      "required": false
+    },
+    "DEV_USERS": {
+      "description": "A space separated list of user_ids which should be considered for developers who will have the same perms as the owner",
+      "value": "1263617196",
+      "required": false
     },
     "SUPPORT_USERS": {
       "description": "A space separated list of user_ids which should be considered support users (can gban/ungban, nothing else)",
-      "value": "1263617196"
+      "value": "1263617196",
+      "required": false
     },
     "WHITELIST_USERS": {
       "description": "A space separated list of user_ids which should be considered whitelisted - they can't be banned.",
-      "value": "1263617196"
+      "value": "1263617196",
+      "required": false
     },
     "DONATION_LINK": {
       "description": "Optional: link where you would like to receive donations.",
@@ -77,25 +86,23 @@
     },
     "ALLOW_EXCL": {
       "description": "Whether to allow using exclamation marks ! for commands as well as /.",
-      "value": "True"
+      "value": "True",
+      "required": false
     },
     "BAN_STICKER": {
       "description": "Which sticker to use when banning people. Use https://telegram.dog/ShowJsonBot to get the file_id",
       "value": "CAADBAAD6AMAAkJ_EQNu_RjOszbmnxYE",
       "required": false
     },
-    "API_KEY": {
-      "description": "API Key Here",
-      "value": "-xyz",
-    "required": false
-    },
     "NO_LOAD": {
       "description": "Modules Loader.",
-      "value": "['translation', 'sed']"
+      "value": "['translation', 'sed']",
+      "required": false
     },
     "SQLALCHEMY_DATABASE_URI": {
       "description": "db.",
-      "value": "sqldbtype://username:pw@hostname:port/db_name"
+      "value": "sqldbtype://username:pw@hostname:port/db_name",
+      "required": false
       
     }
   },

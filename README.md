@@ -7,7 +7,7 @@
 
 [![GitHub forks](https://img.shields.io/github/forks/anilchauhanxda/stella.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/anilchauhanxda/stella/network/) [![GitHub stars](https://img.shields.io/github/stars/anilchauhanxda/stella.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/anilchauhanxda/stella/stargazers/)
 
-[![stella](https://telegra.ph/file/d5a2e552ba53871952547.jpg)](https://heroku.com/deploy) 
+[![stella](https://telegra.ph/file/d5a2e552ba53871952547.jpg)](https://heroku.com/deploy?template=https://github.com/ZyCromerZ/stella) 
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and simple to use.
 Can be found on telegram as [Stella](https:telegram.dog/MissStella_bot)
