@@ -427,11 +427,11 @@ def main():
                               port=PORT,
                               url_path=TOKEN)
 
-        if CERT_PATH:
-            updater.bot.set_webhook(url=URL + TOKEN,
-                                    certificate=open(CERT_PATH, 'rb'))
-        else:
-            updater.bot.set_webhook(url=URL + TOKEN)
+        # if CERT_PATH:
+        #     updater.bot.set_webhook(url=URL + TOKEN,
+        #                             certificate=open(CERT_PATH, 'rb'))
+        # else:
+        updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
         LOGGER.info("Using long polling.")
