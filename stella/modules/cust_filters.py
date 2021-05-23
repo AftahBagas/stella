@@ -22,7 +22,7 @@ HANDLER_GROUP = 10
 
 @run_async
 @connection_status
-def list_handlers(bot: Bot, update: Update):
+def list_handlers(context.bot, update, chat, user.id):
 
     chat = update.effective_chat
     all_handlers = sql.get_chat_triggers(chat.id)
@@ -60,7 +60,7 @@ def list_handlers(bot: Bot, update: Update):
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
 @connection_status
 @user_admin
-def filters(bot: Bot, update: Update):
+def filters(context.bot, update, chat, user.id):
 
     chat = update.effective_chat
     msg = update.effective_message
@@ -136,7 +136,7 @@ def filters(bot: Bot, update: Update):
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
 @connection_status
 @user_admin
-def stop_filter(bot: Bot, update: Update):
+def stop_filters(context.bot, update, chat, user.id):
 
     chat = update.effective_chat
     args = update.effective_message.text.split(None, 1)
@@ -160,7 +160,7 @@ def stop_filter(bot: Bot, update: Update):
 
 
 @run_async
-def reply_filter(bot: Bot, update: Update):
+def reply_filter(update, context):
 
     chat = update.effective_chat
     message = update.effective_message
@@ -199,14 +199,14 @@ def reply_filter(bot: Bot, update: Update):
                     if excp.message == "Unsupported url protocol":
                         message.reply_text("You seem to be trying to use an unsupported url protocol. Telegram "
                                            "doesn't support buttons for some protocols, such as tg://. Please try "
-                                           "again, or ask in @stellatm for help.")
+                                           "again, or ask in @OfficialChannelBotAlpha for help.")
                     elif excp.message == "Reply message not found":
                         bot.send_message(chat.id, filt.reply, parse_mode=ParseMode.MARKDOWN,
                                          disable_web_page_preview=True,
                                          reply_markup=keyboard)
                     else:
                         message.reply_text("This note could not be sent, as it is incorrectly formatted. Ask in "
-                                           "@stellatm if you can't figure out why!")
+                                           "@OfficialChannelBotAlpha if you can't figure out why!")
                         LOGGER.warning("Message %s could not be parsed", str(filt.reply))
                         LOGGER.exception("Could not parse filter %s in chat %s", str(filt.keyword), str(chat.id))
 
